@@ -13,7 +13,7 @@
             margin: 0;
             padding: 20px;
             background-image: url('https://i.ibb.co/0jz5hqxm/pelifestbg.jpg'); /* Ruta de la imagen */
-            background-size: 80%; /* Asegura que la imagen cubra toda la pantalla */
+            background-size: 100%; /* Asegura que la imagen cubra toda la pantalla */
             background-position: center center; /* Centra la imagen */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
@@ -73,6 +73,14 @@
             font-size: 1.8rem;
             margin-top: 20px;
         }
+
+        .card img {
+            width: 100%; /* Ajusta la imagen al 100% del ancho de la tarjeta */
+            height: auto; /* Mantiene la relación de aspecto original */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+            border-radius: 10px; /* Redondea las esquinas de la imagen */
+        }
+
 
         .gallery {
             display: flex;
