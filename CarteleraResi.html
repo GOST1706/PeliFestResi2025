@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana de Películas 🎬</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a; /* Fondo oscuro */
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://i.ibb.co/0jz5hqxm/pelifestbg.jpg'); /* Ruta de la imagen */
+            background-size: 80%; /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+
+        /* Fondo animado */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #333;
+            opacity: 0;
+            animation: fadeInBackground 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeInBackground {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .card {
+            position: relative;
+            background: #333; /* Fondo más oscuro para la tarjeta */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            transform: scale(0.8); /* Inicia pequeño */
+            opacity: 0;
+            animation: zoomInCard 3s ease-out 3s forwards; /* Se activa después del fondo */
+        }
+
+        @keyframes zoomInCard {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .card h1 {
+            font-size: 2.5rem;
+            color: #ff4d4d;
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: -50px; /* Para superponer más las imágenes */
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .gallery img {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .gallery img:hover {
+            height: 100%;
+            transform: scale(1.3);
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 60px rgba(255, 255, 255, 0.2);
+            z-index: 2;
+        }
+
+        .imagen {
+            position: relative;
+        }
+
+        .texto {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            opacity: 1;
+            z-index: 3; /* más alto que la imagen */
+            transition: opacity 0.3s ease;
+            text-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
+        }
+
+        .imagen:hover .texto {
+            opacity: 0;
+        }
+
+        .love-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4d4d;
+            margin-top: 30px;
+        }
+
+        .love-message span {
+            display: inline-block;
+            animation: float 1.5s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="background"></div>
+
+    <!-- Tarjeta con efecto de zoom -->
+    <div class="card">
+        <img src="https://i.ibb.co/7Nn4CtFm/pelifest.png" alt="PeliFest">
+        <div class="gallery">
+          <div class="imagen">
+            <img src="https://i.ibb.co/fV2Ny1XL/Parasite.jpg" alt="Peli 1">
+            <div class="texto">LUNES</div>
+          </div>
+          <div class="imagen">
+            <img src="https://acortar.link/17Jdbf" alt="Peli 2">
+            <div class="texto">MARTES</div>
+          </div>
+          <div class="imagen">
+            <img src="https://i.ibb.co/fzSyTyz3/image.png" alt="Peli 3">
+            <div class="texto">MIERCOLES</div>
+          </div>
+          <div class="imagen">
+            <img src="https://i.ibb.co/nNWVHD8B/image.png" alt="Peli 4">
+            <div class="texto">JUEVES</div>
+          </div>
+          <div class="imagen">
+            <img src="https://pics.filmaffinity.com/Memorias_de_un_caracol-548319445-large.jpg" alt="Peli 5">
+            <div class="texto">VIERNES</div>
+          </div>
+        </div>
+        <div class="love-message">
+            🌟🎥✨🎥✨🎥🌟
+        </div>
+    </div>
+</body>
+</html>
